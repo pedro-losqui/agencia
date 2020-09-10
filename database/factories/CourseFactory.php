@@ -23,7 +23,15 @@ class CourseFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id'       => 1, 
+            'title'         => $this->faker->sentence, 
+            'body'          => $this->faker->text(100), 
+            'teacher'       => $this->faker->name, 
+            'date_start'    => $this->faker->date($format = 'Y-m-d', $max = 'now'), 
+            'date_end'      => $this->faker->date($format = 'Y-m-d', $max = 'now'), 
+            'date_limit'    => $this->faker->date($format = 'Y-m-d', $max = 'now'), 
+            'limit_number'  => $this->faker->randomDigit, 
+            'image'         => $this->faker->imageUrl($width = 370, $height = 270),
         ];
     }
 }

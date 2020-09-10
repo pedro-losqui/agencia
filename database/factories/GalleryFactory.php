@@ -23,7 +23,10 @@ class GalleryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id'       => 1, 
+            'title'         => $this->faker->sentence(1), 
+            'description'   => $this->faker->sentence(5), 
+            'image'         => $this->faker->imageUrl($width = 370, $height = 270),
         ];
     }
 }

@@ -23,7 +23,8 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'gallerie_id'   => rand(1, 20), 
+            'image'         => $this->faker->imageUrl($width = 500, $height = 720),
         ];
     }
 }
