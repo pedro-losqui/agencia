@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Image;
 
 class ImageController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view ('site.images');
+        $images = Image::where('gallerie_id', $id)->get();
+        return view ('site.image.images', compact('images'));
     }
 }

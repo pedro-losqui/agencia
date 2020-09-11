@@ -18,7 +18,7 @@ Artigos
                                 <div class="lower-content">
                                     <div class="upper-box">
                                         <div class="post-date"><i class="fas fa-calendar-alt"></i>{{ $item->created_at->diffForHumans() }}</div>
-                                        <h3><a href="{{ route('detalheartigo', $item->id) }}">{{ $item->title }}</a></h3>
+                                        <h3><a href="{{ route('detalhe-artigo', $item->id) }}">{{ $item->title }}</a></h3>
                                         <div class="text">{{ $item->description }}</div>
                                     </div>
                                     <div class="lower-box clearfix">
