@@ -9,6 +9,6 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        return view ('site.articles');
+        return view ('site.article.articles');
     }
 }

@@ -15,5 +15,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);
         $this->call(ArticleSeeder::class);
+        $this->call(CourseSeeder::class);
+        $this->call(EventSeeder::class);
+        $this->call(FaqSeeder::class);
+        $this->call(GallerySeeder::class);
+        $this->call(ImageSeeder::class);
     }
 }
