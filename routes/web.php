@@ -12,4 +12,4 @@ Route::get('/revista',                  'Site\MagazineController@index')->name('
 Route::get('/Contato',                  'Site\ContactController@index')->name('contato');
 
 Route::get('/imagens/{id}',             'Site\ImageController@index')->name('imagens');
-Route::get('/detalhe-artigo/{id}',      'Site\ImageController@index')->name('detalhe-artigo');
+Route::get('/detalhe-artigo/{id}',      'Site\ArticleController@detail')->name('detalhe-artigo');
