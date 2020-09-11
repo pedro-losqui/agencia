@@ -119,14 +119,19 @@
                         <h1>Agência experimental de TI</h1>
                         @if(Auth()->check())
                             <div class="btn-box">
+
+                                <form id="logout" action="{{ route('logout') }}" method="post">
+                                    {{ csrf_field() }}
+                                </form>
+
                                 <a href="#" class="link-btn">Pedro Vitor Losqui Soares<i class="fas fa-user"></i></a>
-                                <a href="{{ route('home') }}" class="video-btn">Sair<i
-                                        class="fas fa-sign-out-alt"></i></a>
+                                <a href="#" class="video-btn" onClick="document.getElementById('logout').submit();">Sair<i class="fas fa-sign-out-alt"></i></a>
+
                             </div>
                         @else
                             <div class="btn-box">
-                                <a href="#" class="link-btn">Inscrver-se<i class="fas fa-angle-double-right"></i></a>
-                                <a href="{{ route('home') }}" class="video-btn">Fazer Login<i
+                                <a href="{{ route('register') }}" class="link-btn">Inscrver-se<i class="fas fa-angle-double-right"></i></a>
+                                <a href="{{ route('login') }}" class="video-btn">Fazer Login<i
                                         class="fas fa-fingerprint"></i></a>
                             </div>
                         @endif

@@ -13,3 +13,10 @@ Route::get('/Contato',                  'Site\ContactController@index')->name('c
 
 Route::get('/imagens/{id}',             'Site\ImageController@index')->name('imagens');
 Route::get('/detalhe-artigo/{id}',      'Site\ArticleController@detail')->name('detalhe-artigo');
+
+// Rotas de autenticação
+Route::post('/register',               'Auth\LoginController@auth')->name('register');
+Route::post('/logout',                 'Auth\LoginController@logout')->name('logout');
+Route::get('/login',                   'Auth\LoginController@login')->name('login');
+Route::post('/auth',                   'Auth\LoginController@auth')->name('auth');
+
