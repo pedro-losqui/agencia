@@ -11,6 +11,7 @@
     <link href="admin/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="admin/css/app.min.css" rel="stylesheet" type="text/css" />
 
+    <livewire:styles />
 </head>
 
 <body>
@@ -56,7 +57,11 @@
 
                             <div class="dropdown-divider"></div>
 
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <form id="logout" action="{{ route('logout') }}" method="post">
+                                {{ csrf_field() }}
+                            </form>
+
+                            <a href="javascript:void(0);" class="dropdown-item notify-item" onClick="document.getElementById('logout').submit();">
                                 <i class="fe-log-out"></i>
                                 <span>Saír</span>
                             </a>
@@ -171,6 +176,7 @@
     <script src="{{ asset('admin/js/vendor.min.js') }}"></script>
     <script src="{{ asset('admin/js/app.min.js') }}"></script>
 
+    <livewire:scripts />
 </body>
 
 </html>

@@ -22,3 +22,4 @@ Route::post('/auth',                    'Auth\LoginController@auth')->name('auth
 
 // Rotas de administração
 Route::get('/dashboard',                'Admin\HomeController@index')->name('dashboard');
+Route::get('/usuario',                  'Admin\UserController@index')->name('usuario');

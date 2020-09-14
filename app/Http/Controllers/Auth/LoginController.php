@@ -18,7 +18,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        //$this->middleware('guest')->except('logout');
     }
 
     public function login()
@@ -31,7 +31,11 @@ class LoginController extends Controller
         $data = $request->validated();
 
         if (Auth::attempt($data)) {
-            return redirect()->route('dashboard');
+           if (Auth::user()->status == "ativo") {
+               return redirect()->route('dashboard');
+           }else{
+               return back()->withErrors(['email' => 'Este usuário está inativo']);
+           }
         }
         
         return back()->withErrors(['email' => trans('auth.failed')]);
