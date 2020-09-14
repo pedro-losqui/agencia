@@ -9,7 +9,8 @@ class Index extends Component
 {
     public function render()
     {   
-        $users = User::orderBy('id', 'DESC')->paginate(10);
-        return view('livewire.user.index', compact('users'));
+        return view('livewire.user.index', [
+            'users' => User::orderBy('id', 'DESC')->paginate(10)
+        ]);
     }
 }

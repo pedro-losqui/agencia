@@ -124,7 +124,7 @@
                                     {{ csrf_field() }}
                                 </form>
 
-                                <a href="{{ route('dashboard') }}" class="link-btn">Pedro Vitor Losqui Soares<i class="fas fa-user"></i></a>
+                                <a href="{{ route('dashboard') }}" class="link-btn">{{ Auth::user()->name }}<i class="fas fa-user"></i></a>
                                 <a href="#" class="video-btn" onClick="document.getElementById('logout').submit();">Sair<i class="fas fa-sign-out-alt"></i></a>
 
                             </div>
