@@ -31,7 +31,7 @@ class LoginController extends Controller
         $data = $request->validated();
 
         if (Auth::attempt($data)) {
-            return ('Ok');
+            return redirect()->route('dashboard');
         }
         
         return back()->withErrors(['email' => trans('auth.failed')]);

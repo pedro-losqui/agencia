@@ -34,7 +34,7 @@
 
                             <h5 class="auth-title">Agência experimental de TI</h5>
 
-                            <form action="{{ route('auth') }}" method="post">
+                            <form action="{{ route('auth') }}" method="post" autocomplete="off">
                                 {{ csrf_field() }}
                                 <div class="form-group mb-3">
                                     <label for="emailaddress">Endereço de e-mail</label>

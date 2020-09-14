@@ -15,8 +15,10 @@ Route::get('/imagens/{id}',             'Site\ImageController@index')->name('ima
 Route::get('/detalhe-artigo/{id}',      'Site\ArticleController@detail')->name('detalhe-artigo');
 
 // Rotas de autenticação
-Route::post('/register',               'Auth\LoginController@auth')->name('register');
-Route::post('/logout',                 'Auth\LoginController@logout')->name('logout');
-Route::get('/login',                   'Auth\LoginController@login')->name('login');
-Route::post('/auth',                   'Auth\LoginController@auth')->name('auth');
+Route::post('/register',                'Auth\LoginController@auth')->name('register');
+Route::post('/logout',                  'Auth\LoginController@logout')->name('logout');
+Route::get('/login',                    'Auth\LoginController@login')->name('login');
+Route::post('/auth',                    'Auth\LoginController@auth')->name('auth');
 
+// Rotas de administração
+Route::get('/dashboard',                'Admin\HomeController@index')->name('dashboard');
