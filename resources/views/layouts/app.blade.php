@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link href="admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="admin/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="admin/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin/css/app.min.css') }}" rel="stylesheet" type="text/css" />
 
     <livewire:styles />
 </head>
@@ -78,7 +78,7 @@
                 </ul>
 
                 <div class="logo-box">
-                    <a href="index.html" class="logo text-center">
+                    <a href="{{ route('home') }}" class="logo text-center">
                         <span class="logo-lg">
                             <img src="{{ asset('site/images/logo.png') }}" alt="" height="46">
                         </span>
@@ -108,12 +108,12 @@
                     <ul class="navigation-menu">
 
                         <li class="has-submenu">
-                            <a href="#">
+                            <a href="{{ route('dashboard') }}">
                                 <i class="la la-dashboard"></i>Dashboard </a>
                         </li>
 
                         <li class="has-submenu">
-                            <a href="#">
+                            <a href="{{ route('usuario') }}">
                                 <i class="la la-user"></i>Usuário </a>
                         </li>
 
