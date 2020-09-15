@@ -47,9 +47,9 @@
                             @empty
 
                             @endforelse
-
                         </tbody>
                     </table>
+                    {{ $users->links('layouts.pagination-admin') }}
                 </div>
             </div>
         </div>
