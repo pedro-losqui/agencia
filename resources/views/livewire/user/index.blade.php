@@ -21,7 +21,7 @@
                             @forelse($users as $item)
                                 <tr>
                                     <td style="width: 36px;">
-                                        <img src="{{ $item->image }}" class="rounded-circle avatar-sm">
+                                        <img src="{{ Storage::url($item->image) }}" class="rounded-circle avatar-sm">
                                     </td>
 
                                     <td>
@@ -38,10 +38,8 @@
                                     </td>
 
                                     <td>
-                                        <a href="javascript: void(0);" class="btn btn-xs btn-light"><i
-                                                class="mdi mdi-lead-pencil"></i></a>
-                                        <a href="javascript: void(0);" class="btn btn-xs btn-danger"><i
-                                                class="mdi mdi-trash-can-outline"></i></a>
+                                        <button class="btn btn-xs btn-light"><i class="mdi mdi-lead-pencil"></i></button>
+                                        <button wire:click="destroy({{ $item->id }})" class="btn btn-xs btn-danger"><i class="mdi mdi-trash-can-outline"></i></button>
                                     </td>
                                 </tr>
                             @empty
@@ -49,9 +47,10 @@
                             @endforelse
                         </tbody>
                     </table>
-                    {{ $users->links('layouts.pagination-admin') }}
                 </div>
             </div>
+            {{ $users->links('layouts.pagination-admin') }}
+            <hr>
         </div>
     <div class="row">
         <div class="col-xl-12">

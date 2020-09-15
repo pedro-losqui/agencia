@@ -6,8 +6,8 @@
                 <h4 class="modal-title">Cadastro de usuário</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
-            <div class="modal-body p-4">
-                <form autocomplete="off">
+            <form wire:submit.prevent="save" autocomplete="off" enctype="multipart/form-data">
+                <div class="modal-body p-4">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
@@ -37,6 +37,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group mb-3">
+                                @if($image)
+                                    <img height="95" src="{{ $image->temporaryUrl() }}">
+                                    <hr>
+                                @endif
                                 <label for="example-fileinput">Avatar</label>
                                 <input type="file" id="example-fileinput" wire:model="image" class="form-control-file">
                             </div>
@@ -90,12 +94,13 @@
                             </div>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Fechar</button>
-                <button type="button" wire:click='store()' class="btn btn-info waves-effect waves-light">Salvar</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Fechar</button>
+                    <button type="button" wire:click='store()'
+                        class="btn btn-info waves-effect waves-light">Salvar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

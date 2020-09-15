@@ -34,12 +34,17 @@ class Index extends Component
         User::create([
             'name'      => $this->name,
             'email'     => $this->email,
-            'image'     => $this->image->store('photos'),
+            'image'     => $this->image->store('avatars', 'public'),
             'password'  => Hash::make($this->password),
             'status'    => $this->status,
         ]);
 
         $this->default();
+    }
+
+    public function destroy($id)
+    {
+        User::destroy($id);
     }
 
     public function default()
