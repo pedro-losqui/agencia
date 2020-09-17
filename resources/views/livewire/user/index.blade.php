@@ -1,6 +1,8 @@
 <div>
 
     @include('livewire.user.create')
+    
+    @include('livewire.user.edit')
 
     <div class="row">
         <div class="col-xl-6">
@@ -38,7 +40,7 @@
                                     </td>
 
                                     <td>
-                                        <button class="btn btn-xs btn-light"><i class="mdi mdi-lead-pencil"></i></button>
+                                        <button wire:click="edit({{ $item->id }})" class="btn btn-xs btn-light" data-toggle="modal" data-target="#con-close-modal-edit"><i class="mdi mdi-lead-pencil"></i></button>
                                         <button wire:click="destroy({{ $item->id }})" class="btn btn-xs btn-danger"><i class="mdi mdi-trash-can-outline"></i></button>
                                     </td>
                                 </tr>
@@ -70,7 +72,7 @@
                     </form>
                 </li>
                 <br>
-                <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal">
+                <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-create">
                     <span class="btn-label"><i class="mdi mdi-account-plus"></i></span>Adicionar
                 </button>
             </div>

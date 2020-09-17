@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <livewire:styles>
     <link href="{{ asset('admin/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/css/app.min.css') }}" rel="stylesheet" type="text/css" />
-
-    <livewire:styles />
+    <link href="{{ asset('admin/libs/jquery-toast/jquery.toast.min.css') }}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -173,10 +173,9 @@
 
     <div class="rightbar-overlay"></div>
 
+    <livewire:scripts>
     <script src="{{ asset('admin/js/vendor.min.js') }}"></script>
     <script src="{{ asset('admin/js/app.min.js') }}"></script>
-
-    <livewire:scripts />
 </body>
 
 </html>

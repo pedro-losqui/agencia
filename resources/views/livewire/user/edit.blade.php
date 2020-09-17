@@ -1,9 +1,8 @@
-<div wire:ignore.self id="con-close-modal-create" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true" style="display: none;">
+<div wire:ignore.self id="con-close-modal-edit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Cadastro de usuário</h4>
+                <h4 class="modal-title">Edição de usuário</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <form autocomplete="off" enctype="multipart/form-data">
@@ -36,6 +35,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
+                            <img height="85" src="{{ Storage::url($image) }}">
+                            <hr>
                             <div class="form-group mb-3">
                                 <label for="example-fileinput">Avatar</label>
                                 <input type="file" id="example-fileinput" wire:model="image" class="form-control-file">
@@ -45,27 +46,6 @@
                                     {{ $message }}
                                 </div>
                             @enderror
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-4" class="control-label">Senha</label>
-                                <input type="text" wire:model="password" class="form-control" id="field-4"
-                                    placeholder="******">
-                            </div>
-                            @error('password')
-                                <div class="alert alert-danger" role="alert">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="field-5" class="control-label">Confirmar senha</label>
-                                <input type="text" wire:model="password_confirmation" class="form-control" id="field-5"
-                                    placeholder="******">
-                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -93,7 +73,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Fechar</button>
-                    <button type="button" wire:click='store()' class="btn btn-info waves-effect waves-light">Salvar</button>
+                    <button type="button" wire:click='update()'
+                        class="btn btn-info waves-effect waves-light" >Atualizar</button>
                 </div>
             </form>
         </div>
