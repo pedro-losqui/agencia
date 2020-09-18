@@ -20,6 +20,8 @@ class Index extends Component
         return view('livewire.user.index', [
             'users' => User::orderBy('id', 'DESC')->paginate(10)
         ]);
+
+        $this->default();
     }
 
     public function store()
@@ -50,13 +52,12 @@ class Index extends Component
         $this->user_id  = $user->id;
         $this->name     = $user->name;
         $this->email    = $user->email;
-        $this->image    = $user->image;
         $this->status   = $user->status;
     }
 
     public function update()
     {
-        $this->validate([
+        $data = $this->validate([
             'name'      => 'required|string',
             'email'     => ['required', Rule::unique('users')->ignore($this->user_id)],
             'status'    => 'required',
@@ -64,15 +65,15 @@ class Index extends Component
 
         $user = User::Find($this->user_id);
         
-        $user->update([
-            'name'      => $this->name,
-            'email'     => $this->email,
-            'image'     => $this->image,
-            'password'  => Hash::make($this->password),
-            'status'    => $this->status,
-        ]);
+        $user->update($data);
 
-        $this->default();
+        if (!empty($this->image)) {
+            $user->update([
+                'image' => $this->image->store('avatars', 'public'),
+            ]);
+        }
+
+        $this->edit($this->user_id);
 
     }
 
@@ -87,6 +88,7 @@ class Index extends Component
         $this->email    = '';
         $this->image    = '';
         $this->password = '';
+        $this->password_confirmation = '';
         $this->status   = '';
     }
 

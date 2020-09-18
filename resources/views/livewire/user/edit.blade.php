@@ -1,4 +1,5 @@
-<div wire:ignore.self id="con-close-modal-edit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div wire:ignore.self id="con-close-modal-edit" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -35,8 +36,6 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <img height="85" src="{{ Storage::url($image) }}">
-                            <hr>
                             <div class="form-group mb-3">
                                 <label for="example-fileinput">Avatar</label>
                                 <input type="file" id="example-fileinput" wire:model="image" class="form-control-file">
@@ -74,7 +73,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Fechar</button>
                     <button type="button" wire:click='update()'
-                        class="btn btn-info waves-effect waves-light" >Atualizar</button>
+                        class="btn btn-info waves-effect waves-light">Atualizar</button>
                 </div>
             </form>
         </div>
